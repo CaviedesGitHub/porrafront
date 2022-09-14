@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-    private backUrl: string = "http://127.0.0.1:5000"
+    private backUrl: string = "https://porraback.herokuapp.com"
 
     constructor(private http: HttpClient) { }
 
