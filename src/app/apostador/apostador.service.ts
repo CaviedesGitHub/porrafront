@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ApostadorService {
-  private backUrl: string = "http://127.0.0.1:5000"
+  private backUrl: string = "https://porraback.herokuapp.com"
   constructor(private http:HttpClient) { }
 
   getApostadores(token: string):Observable<Apostador[]>{
