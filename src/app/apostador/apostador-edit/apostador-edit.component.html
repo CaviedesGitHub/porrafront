@@ -1,0 +1,145 @@
+<div class="container mt-4">
+  <h2 class="text-center">Editar Apostador</h2>
+  <form
+    [formGroup]="apostadorForm"
+    (ngSubmit)="!apostadorForm.invalid && editApostador(apostadorForm.value)"
+  >
+    <!--Nombre-->
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="nombre_apostador">Nombre</label>
+      <input
+        novalidate
+        id="nombre_apostador"
+        class="form-control"
+        formControlName="nombre_apostador"
+        placeholder="Nombre del Apostador"
+      />
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="
+          apostadorForm.get('nombre_apostador')!.hasError('required') &&
+          apostadorForm.get('nombre_apostador')!.touched
+        "
+      >
+        Nombre Obligatorio
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="apostadorForm.get('nombre_apostador')!.hasError('minlength')"
+      >
+        Nombre muy corto
+      </div>
+    </div>
+
+    <!--Apellido-->
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="apellido_apostador">Apellido</label>
+      <input
+        novalidate
+        id="apellido_apostador"
+        class="form-control"
+        formControlName="apellido_apostador"
+        placeholder="Apellido del Apostador"
+      />
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="
+          apostadorForm.get('apellido_apostador')!.hasError('required') &&
+          apostadorForm.get('apellido_apostador')!.touched
+        "
+      >
+        Apellido Obligatorio
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="apostadorForm.get('apellido_apostador')!.hasError('minlength')"
+      >
+        Apellido muy corto
+      </div>
+    </div>
+
+    <!--Usuario-->
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="usuario">Usuario</label>
+      <input
+        novalidate
+        id="usuario"
+        class="form-control"
+        formControlName="usuario"
+        placeholder="Usuario del Apostador"
+      />
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="
+          apostadorForm.get('usuario')!.hasError('required') &&
+          apostadorForm.get('usuario')!.touched
+        "
+      >
+        Usuario Obligatorio
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="apostadorForm.get('usuario')!.hasError('minlength')"
+      >
+        Usuario muy corto
+      </div>
+    </div>
+
+    <!--Correo-->
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="correo">Correo</label>
+      <input
+        novalidate
+        id="correo"
+        class="form-control"
+        formControlName="correo"
+        placeholder="Correo del Apostador"
+      />
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="
+          apostadorForm.get('correo')!.hasError('required') &&
+          apostadorForm.get('correo')!.touched
+        "
+      >
+        Correo required
+      </div>
+    </div>
+
+    <!--Saldo-->
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="saldo">Saldo</label>
+      <input
+        novalidate
+        id="saldo"
+        class="form-control"
+        formControlName="saldo"
+        placeholder="Saldo del Apostador"
+      />
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        *ngIf="
+          apostadorForm.get('saldo')!.hasError('required') &&
+          apostadorForm.get('saldo')!.touched
+        "
+      >
+        Saldo Obligatorio
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!apostadorForm.valid"
+    >
+      Create
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger ml-3"
+      (click)="cancelEdition()"
+    >
+      Cancel
+    </button>
+  </form>
+ </div>

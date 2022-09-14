@@ -1,0 +1,34 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="h4">Id</th>
+      <th class="h4">Nombre</th>
+      <th class="h4">Apellido</th>
+      <th class="h4">Usuario</th>
+      <th class="h4">Correo</th>
+      <th class="h4">Saldo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let apos of apostadores">
+      <td>
+        <dd>{{apos.id}}</dd>
+      </td>
+      <td>
+        <dd>{{apos.nombre_apostador}}</dd>
+      </td>
+      <td>
+        <dd>{{apos.apellido_apostador}}</dd>
+      </td>
+      <td>
+        <dd>{{apos.usuario}}</dd>
+      </td>
+      <td>
+        <dd>{{apos.correo}}</dd>
+      </td>
+      <td>
+        <dd>{{apos.saldo}}</dd>
+      </td>
+  </tr>
+  </tbody>
+</table>
